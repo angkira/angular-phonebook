@@ -1,0 +1,16 @@
+
+<md-whiteframe flex="flex" layout-align="center center" ng-show="model.showCard" class="UserCard">
+  <md-card class="card content">
+    <md-toolbar class="title"><span class="title-text">User# {{model.currentUser['id']}}</span>
+      <md-button ng-click="model.showCard = false;" aria-label="close_button" class="btn-close">
+        <md-icon md-svg-src="img/icons/ic_close_36px.svg">          </md-icon>
+      </md-button>
+    </md-toolbar>
+    <div class="avatar-wrap"><img ng-src="{{model.currentUser[&quot;avatar&quot;]}}" class="md-avatar"/></div>
+    <md-list flex="flex" class="data">
+      <md-item ng-repeat="(key,value) in model.currentUser" ng-if="key!='avatar'&amp;&amp; key!='id';"> 
+        <div ng-bind="value" class="item"></div>
+      </md-item>
+    </md-list>
+  </md-card>
+</md-whiteframe>

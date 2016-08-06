@@ -1,0 +1,11 @@
+md-whiteframe(flex layout-align="center center" ng-show="model.showCard").UserCard
+    md-card.card.content
+        md-toolbar.title
+            span.title-text User# {{model.currentUser['id']}}
+            md-button(ng-click="model.showCard = false;" aria-label="close_button").btn-close
+                md-icon(md-svg-src="img/icons/ic_close_36px.svg")           
+        .avatar-wrap
+            img(ng-src='{{model.currentUser["avatar"]}}').md-avatar
+        md-list(flex).data
+            md-item(ng-repeat="(key,value) in model.currentUser" ng-if="key!='avatar'&& key!='id';") 
+                div.item(ng-bind="value")

@@ -1,0 +1,11 @@
+
+<table ng-init="model.getData()" class="userList card">
+  <thead>
+    <th ng-repeat="field in model.fields" ng-bind="field" ng-click="model.sortDet = field; model.sortRev = !model.sortRev">{{sortDet}}</th>
+  </thead>
+  <tbody class="list">
+    <tr ng-repeat="user in (model.UserList | filter:query | orderBy:model.sortDet:model.Rev)" ng-click="model.chooseUser(user.id)" class="userList-user">
+      <td ng-repeat="field in model.fields" ng-bind="user[field]"></td>
+    </tr>
+  </tbody>
+</table>
